@@ -1,0 +1,17 @@
+1a.
+If we are considering A is actually smaller than B
+
+Null is A >= B
+Alt is A < B 
+
+1b.
+Avg diff is -97.182
+p value for  A:B 0.024
+
+1c.
+.02 < .05 - Reject
+at .05 alpha there is significant probability that the null hypothesis should be rejected
+
+1d.
+.02 > .01 Do not reject  
+at .01 alpha do not reject null hypothesis because there is not sufficient evidence that our sample is 
