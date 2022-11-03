@@ -52,28 +52,26 @@ createScenerio <- function(revenue, customers, lost, new, churn_rate, profit_mar
   return(data)
 }
 
-
 createProfitScenerio <- function(existing_clv, new_clv, discount_rate, current_customers, new_customers_per_year) {
   # returns a dictionary with necessary variables to calculate different values for the analysis
   data <- {}
   
-  data['existing_clv'] <- existing_clv
-  data['new_clv'] <- new_clv
-  data['discount_rate'] <- discount_rate
-  data['current_customers'] <- current_customers
-  data['new_customers_per_year'] <- new_customers_per_year
+  data['value_of_current_base'] <- existing_clv * current_customers
   
-  # provided calculations 
+  df <- tibble(time = c(1:10), 
+                      cashflow =rep(new_clv * new_customers_per_year, 10), 
+                      discount_rate = rep(discount_rate, 10))
   
-  data['churn_rate'] <- churn_rate # No clue how they came up with this.
-  data['profit_marigin'] <- profit_margin
-  data['discount_rate'] <- discount_rate
+  df <- df %>% mutate(present_value = cashflow / (1+discount_rate)^time)
   
-  # calculated variables
-  data['retention_rate'] <- getRetentionRate(data['churn_rate'])
-  data['cash_per_customer'] <- getCashPerCustomer(data['revenue'], data['customers'])
-  data['profit_per_customer'] <- getProfitPerCustomer(data['cash_per_customer'], data['profit_marigin'])
-  data['clv'] <- getCLV(data['profit_per_customer'], data['discount_rate'], data['retention_rate'])
+  data["cashflows"] <- list(df)
+  
+  data["npv_of_future_customers"] <- df %>% 
+    select(present_value) %>% 
+    sum()
+  
+  data["total_value_of_customers"] <- as.numeric(data["npv_of_future_customers"]) + as.numeric(data["value_of_current_base"])
+
   
   return(data)
 }
@@ -112,22 +110,27 @@ scenerio_2
 
 # note: numbers in excel were heavily rounded
 
-# profit scenario current 
-value_of_current_base <- current["clv"] * current['customers']
+# profit scenario current
+# profit_scene_1 <- createProfitScenerio(1345, 1345, case_dr, 6558, 600)
+current_scenario <- createProfitScenerio(current["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
 
-cashflows <- tibble(time = c(1:10), 
-                    cashflow =rep(current["clv"] * case_new_customers_per_year, 10), 
-                    discount_rate = rep(case_dr, 10))
+# profit scenario 1
+# profit_scenario_1 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
+profit_scenario_1 <- createProfitScenerio(1345, 1345, case_dr, 6558, 600)
+profit_scenario_1
 
-cashflows <- cashflows %>% mutate(present_value = cashflow / (1+discount_rate)^time)
+# profit scenario 2
+# profit_scenario_2 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
+profit_scenario_2 <- createProfitScenerio(1230, 1345, case_dr, 6558, 700)
+profit_scenario_2
 
-npv_of_future_customers <- cashflows %>% 
-  select(present_value) %>% 
-  sum()
 
-total_value_of_customers <- npv_of_future_customers + value_of_current_base
-
+# profit scenario 3
+# profit_scenario_3 <- createProfitScenerio(scenerio_2["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
+profit_scenario_3 <- createProfitScenerio(1230, 1484, case_dr, 6558, 700)
+profit_scenario_3
 
 
 # references
 # https://www.codingprof.com/how-to-calculate-the-net-present-value-npv-in-r-examples/
+# https://bookdown.org/jeffreytmonroe/business_analytics_with_r7/finance.html
