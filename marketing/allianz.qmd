@@ -30,9 +30,6 @@ Allianz is an insurance company in Europe that is facing a difficult decision - 
 
 This analysis will go over profit scenarios for four countries. Germany, France, Spain, and Italy.
 
-:::{.callout-note}
-This is an an initial analysis that does not take into account all markets
-:::
 
 ```{r}
 #| code-fold: true
@@ -115,15 +112,144 @@ createProfitScenerio <- function(existing_clv, new_clv, discount_rate, current_c
 
 ```
 
-## Analysis
+## Single Analysis Example: Germany
 
-This is my analysis. See it go!
+This is an example analysis for current total value for Germany that will be replicated for the three other countries. In addition to current scenarios, the analysis will include profit scenarios that take into account churn increase and decrease.
 
-:::{.callout-important}
-Look at this!
+
+```{r}
+case_rev <- 6296000000
+case_cust <- 6558000
+case_lost <- 771000
+case_new <- 574000
+case_churn <- .114
+case_pm <- .3
+case_dr <- .1
+
+case_new_customers_per_year <- 600000
+```
+
+Current Scenario
+
+```{r}
+#| code-overflow: scroll
+current <- createScenerio(revenue = case_rev, customers=case_cust,
+                          lost=case_lost, new=case_new, churn_rate=case_churn,
+                          profit_margin=case_pm, discount_rate=case_dr)
+
+current_scenario <- createProfitScenerio(current["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
+```
+
+::: {.panel-tabset}
+
+## Code
+```{r}
+#| echo: fenced
+#| eval: false
+
+current_scenario["value_of_current_base"]
+```
+
+## Output: Value of Current Customers
+```{r}
+#| echo: false
+#| eval: true
+current_scenario["value_of_current_base"]
+```
+
+:::
+
+::: {.panel-tabset}
+
+## Value of future customers
+```{r}
+#| echo: fenced
+#| eval: true
+current_scenario["npv_of_future_customers"]
+```
+
+## Cashflows
+```{r}
+#| echo: false
+#| eval: true
+
+current_scenario["cashflows"]
+```
+
 :::
 
 ```{r}
-cat("Hello World")
+current_scenario["total_value_of_customers"]
 ```
 
+The above then gets repeated with an increment and decrement in churn by 2%
+
+### Churn Increase/Decrease Scenario
+
+```{r}
+scenerio_1 <- createScenerio(revenue = case_rev, customers=case_cust,
+                             lost=case_lost, new=case_new, churn_rate=case_churn + .02,
+                             profit_margin=case_pm, discount_rate=case_dr)
+
+scenerio_2 <- createScenerio(revenue = case_rev, customers=case_cust,
+                             lost=case_lost, new=case_new, churn_rate=case_churn - .02,
+                             profit_margin=case_pm, discount_rate=case_dr)
+```
+
+### Profit Scenario 1
+
+```{r}
+profit_scenario_1 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
+
+profit_scenario_1["total_value_of_customers"]
+```
+
+### Profit Scenario 2
+
+```{r}
+profit_scenario_2 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
+
+profit_scenario_2["total_value_of_customers"]
+```
+
+### Profit Scenario 3
+
+```{r}
+profit_scenario_3 <- createProfitScenerio(scenerio_1["clv"], scenerio_2["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
+
+profit_scenario_3["total_value_of_customers"]
+```
+
+:::{.callout-note}
+This scenario is an aggregated analysis for Germany and is a sum of split markets including: Agents, Brokers, Aggregators, etc..
+:::
+
+## Analysis
+
+:::{.callout-important}
+This is provided data from the case in 2018. Below variables are initial values and can be adjusted. 
+:::
+
+
+
+
+
+## Quarto is fun
+
+```{css echo=FALSE}
+.mycss {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width:45%;
+  height:auto;
+}
+```
+
+
+
+::: {.mycss}
+
+![](markdown.jpg)
+
+:::
