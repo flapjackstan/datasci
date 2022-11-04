@@ -1,0 +1,129 @@
+---
+title: "Allianz: Is Simplicity the Way Forward?"
+description: "Allianz CLV Study"
+author: "Elmer Camargo"
+date: "11/04/22"
+abstract-title: "TLDR: Would a simple plan work for multiple countries?"
+abstract: "this is my abstract. Shit is fucked"
+title-block-banner: true
+
+format: 
+  html:
+    code-fold: false
+    theme: cosmo
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+library(glue)
+library(FinancialMath)
+```
+
+## Brief Intro
+
+Allianz is an insurance company in Europe that is facing a difficult decision - . 
+
+## Analysis Description
+
+This analysis will go over profit scenarios for four countries. Germany, France, Spain, and Italy.
+
+:::{.callout-note}
+This is an an initial analysis that does not take into account all markets
+:::
+
+```{r}
+#| code-fold: true
+#| code-summary: Functions Used in Analysis
+#| code-overflow: wrap
+
+getRetentionRate <- function(churn) {
+  # returns retention rate given a churn percentage
+  ret <- 1 - churn
+  return(ret)
+}
+
+
+getCashPerCustomer <- function(total_cash, count_customers) {
+  # returns an average numbers spent by cohort of customers
+  cash_per_customer <- total_cash / count_customers
+  return(cash_per_customer)
+}
+
+getProfitPerCustomer <- function(cash_per_customer, profit_margin) {
+  # returns an average profit provided by cohort of customers
+  profit_per_customer <- cash_per_customer * profit_margin
+  return(profit_per_customer)
+}
+
+getCLV <- function(profit_per_customer, discount_rate, retention_rate) {
+  # returns Customer Lifetime Value for cohort of customers
+  clv <- profit_per_customer / (1 + (discount_rate - retention_rate))
+  return(clv)
+}
+
+createScenerio <- function(revenue, customers, lost, new, churn_rate, profit_margin, discount_rate) {
+  # returns a dictionary with necessary variables to calculate different values for the analysis
+  data <- {}
+  
+  data['revenue'] <- revenue
+  data['customers'] <- customers
+  data['lost'] <- lost
+  data['new'] <- new
+  
+  # provided calculations 
+  
+  data['churn_rate'] <- churn_rate # No clue how they came up with this.
+  data['profit_marigin'] <- profit_margin
+  data['discount_rate'] <- discount_rate
+  
+  # calculated variables
+  data['retention_rate'] <- getRetentionRate(data['churn_rate'])
+  data['cash_per_customer'] <- getCashPerCustomer(data['revenue'], data['customers'])
+  data['profit_per_customer'] <- getProfitPerCustomer(data['cash_per_customer'], data['profit_marigin'])
+  data['clv'] <- getCLV(data['profit_per_customer'], data['discount_rate'], data['retention_rate'])
+  
+  return(data)
+}
+
+createProfitScenerio <- function(existing_clv, new_clv, discount_rate, current_customers, new_customers_per_year) {
+  # returns a dictionary with necessary variables to calculate different values for the analysis
+  data <- {}
+  
+  data['value_of_current_base'] <- existing_clv * current_customers
+  
+  df <- tibble(time = c(1:10), 
+                      cashflow =rep(new_clv * new_customers_per_year, 10), 
+                      discount_rate = rep(discount_rate, 10))
+  
+  df <- df %>% mutate(present_value = cashflow / (1+discount_rate)^time)
+  
+  data["cashflows"] <- list(df)
+  
+  data["npv_of_future_customers"] <- df %>% 
+    select(present_value) %>% 
+    sum()
+  
+  data["total_value_of_customers"] <- as.numeric(data["npv_of_future_customers"]) + as.numeric(data["value_of_current_base"])
+
+  
+  return(data)
+}
+
+
+```
+
+## Analysis
+
+This is my analysis. See it go!
+
+:::{.callout-important}
+Look at this!
+:::
+
+```{r}
+cat("Hello World")
+```
+
