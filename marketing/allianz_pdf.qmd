@@ -2,16 +2,12 @@
 title: "Allianz: Is Simplicity the Way Forward?"
 description: "Allianz CLV Study"
 author: "Elmer Camargo"
-date: "11/04/22"
-abstract-title: "TLDR: Would a simple plan work for multiple countries?"
-abstract: "this is my abstract. Shit is fucked"
-title-block-banner: true
 
-format: 
-  html:
-    code-fold: false
-    theme: cosmo
-editor: visual
+format:
+  pdf:
+    toc: false
+    number-sections: false
+    colorlinks: true
 ---
 
 ```{r}
@@ -23,19 +19,16 @@ library(FinancialMath)
 library(knitr)
 ```
 
-## Brief Intro
+## Analysis Summary
 
-Allianz is an insurance company in Europe that is facing a difficult decision - .
+Allianz is an insurance company in Europe that is facing a difficult decision - should they eliminate personalized insurance policies and replace them with a simple 3-tier coverage system? Our analysis shows that for the switch to be profitable in the **first** year for all countries, the third scenario will have to be achieved. If there is a strong push to implement the changes, our recommendation would be to roll it out into France first.
 
-## Analysis Description
+## Analysis Design
 
-This analysis will go over profit scenarios for four countries. Germany, France, Spain, and Italy.
+This analysis will go over profit scenarios for four countries. Germany, France, Spain, and Italy. These four countries represent the four biggest markets under Allianz's belt. "If they can make it work there, they would be 95% there" (De la Sota). The analysis includes a sensitivity analysis over total customer value where 3 possible scenarios can occur: where churn can change by +2% for current customers (unhappy customer who don't like the system update), change by -2% in future customers (customers attracted by new system), and where customer acquisition can increase by 100k. The following transformations are applies to each country to be analyzed and interpreted.
 
 ```{r}
-#| code-fold: true
-#| code-summary: Functions Used in Analysis
-#| code-overflow: wrap
-
+#| echo: false
 
 getRetentionRate <- function(churn) {
   # returns retention rate given a churn percentage
@@ -140,9 +133,10 @@ createCountryScenerio <- function(revenue, customers, lost, new, churn_rate, pro
 
 ## Single Analysis Example: Germany
 
-This is an example analysis for current total value for Germany that will be replicated for the three other countries. In addition to current scenarios, the analysis will include profit scenarios that take into account churn increase and decrease.
+This is an example analysis for total value for Germany only. This exact analysis will be replicated for the three other countries. It is essential to understand what is happening in this single analysis, which is why this single example is singled out. The first step in this analysis is to calculate the total value of customers under the current conditions (see apendix 1-4). The next step is to calculate the same total value of customers variable for different scenarios. An example of 1 of the 3 profit scenarios we are testing in our sensitivity analysis can be seen in apendix 5-8 - the two other scenarios are not provided in the appendix but can be viewed in the `.qmd` file attached. Below is a single concatenated table showing value in customers over the three scenarios and its relative change to current standards.
 
 ```{r}
+#| echo: false
 case_rev <- 6296000000
 case_cust <- 6558000
 case_lost <- 771000
@@ -154,10 +148,8 @@ case_dr <- .1
 case_new_customers_per_year <- case_new
 ```
 
-Current Scenario
-
 ```{r}
-#| code-overflow: scroll
+#| echo: false
 current <- createScenerio(revenue = case_rev, customers=case_cust,
                           lost=case_lost, new=case_new, churn_rate=case_churn,
                           profit_margin=case_pm, discount_rate=case_dr)
@@ -165,53 +157,8 @@ current <- createScenerio(revenue = case_rev, customers=case_cust,
 current_scenario <- createProfitScenerio(current["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
 ```
 
-::: panel-tabset
-## Code
-
-```{r}
-#| echo: fenced
-#| eval: false
-
-current_scenario["value_of_current_base"]
-```
-
-## Output: Value of Current Customers
-
 ```{r}
 #| echo: false
-#| eval: true
-current_scenario["value_of_current_base"]
-```
-:::
-
-::: panel-tabset
-## Value of future customers
-
-```{r}
-#| echo: fenced
-#| eval: true
-current_scenario["npv_of_future_customers"]
-```
-
-## Cashflows
-
-```{r}
-#| echo: false
-#| eval: true
-
-current_scenario["cashflows"]
-```
-:::
-
-```{r}
-current_scenario["total_value_of_customers"]
-```
-
-The above then gets repeated with an increment and decrement in churn by 2%
-
-### Churn Increase/Decrease Scenario
-
-```{r}
 scenerio_1 <- createScenerio(revenue = case_rev, customers=case_cust,
                              lost=case_lost, new=case_new, churn_rate=case_churn + .02,
                              profit_margin=case_pm, discount_rate=case_dr)
@@ -221,33 +168,23 @@ scenerio_2 <- createScenerio(revenue = case_rev, customers=case_cust,
                              profit_margin=case_pm, discount_rate=case_dr)
 ```
 
-### Profit Scenario 1
-
 ```{r}
+#| echo: false
 profit_scenario_1 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
-
-profit_scenario_1["total_value_of_customers"]
 ```
 
-### Profit Scenario 2
-
 ```{r}
+#| echo: false
 profit_scenario_2 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
-
-profit_scenario_2["total_value_of_customers"]
 ```
 
-### Profit Scenario 3
-
 ```{r}
+#| echo: false
 profit_scenario_3 <- createProfitScenerio(scenerio_1["clv"], scenerio_2["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
-
-profit_scenario_3["total_value_of_customers"]
 ```
 
-### Profit Scenario Table
-
 ```{r}
+#| echo: false
 df <- tibble(germany = c(as.numeric(current_scenario["total_value_of_customers"]), as.numeric(profit_scenario_1["total_value_of_customers"]), as.numeric(profit_scenario_2["total_value_of_customers"]), as.numeric(profit_scenario_3["total_value_of_customers"])))
 
 curr <- df$germany[1]
@@ -265,12 +202,18 @@ kable(head(df))
 ```
 
 ::: callout-note
-1. This scenario is an aggregated analysis for Germany and is a sum of split markets including: Agents, Brokers, Aggregators, etc..
+1.  This scenario is an aggregated analysis for Germany and is a sum of split markets including: Agents, Brokers, Aggregators, etc..
 
-2. New customers per year was assigned as a constant variable of the previous years new customers.
+2.  New customers per year was assigned as a constant variable of the previous years new customers. The same is true for the following analysis.
 :::
 
-## 4 Country Analysis
+## Four Country Analysis
+
+Below is a summary table following the same process as applied in the single example. As can be seen, applying the change will affect each country differently, given that each country has their own unique ways of serving their customers. Some general trends to highlight are:
+
+1.  In all countries, profit scenario 1 leads to a negative trend.
+2.  Germany is the only country to be slightly profitable in scenario 2.
+3.  In all scenarios, France generally has the most to gain from this change.
 
 ```{r}
 #| echo: false
@@ -304,35 +247,88 @@ italy <- italy %>% mutate("italy_relative_change" = (italy/curr -1)*100)
 
 all_countries <- tibble(scenarios=c("current", "profit scenario 1", "profit scenario 2", "profit scenario 3"),germany,france,italy,spain)
 
-all_countries_percentages <- all_countries %>% select("scenarios","germany_relative_change","france_relative_change","italy_relative_change","spain_relative_change")
+all_countries_percentages <- all_countries %>% select("scenarios","germany_relative_change","france_relative_change","italy_relative_change","spain_relative_change") 
+
+names(all_countries_percentages) <- c('scenarios','germany','france','italy','spain')
 
 ```
 
 ```{r}
 #| echo: false
 #| label: tbl-all
-#| tbl-cap: "All Countries"
+#| tbl-cap: "All Countries Relative Change"
 #| tbl-colwidths: [60,40]
 
 kable(head(all_countries_percentages))
 ```
 
 ::: callout-important
-This is provided data from the case in 2018. Below variables are initial values and can be adjusted.
+1.  Variables are changeable values and can be adjusted and further optimized.
+2.  This analysis only shows the potential results for one year. The program can still be an overall success if sequential years are profitable.
 :::
 
-## Quarto is fun
+## Appendix
 
-```{css echo=FALSE}
-.mycss {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width:45%;
-  height:auto;
-}
+### 1. Value of Germany Current Customers Current Conditions
+
+```{r}
+#| echo: false
+#| eval: true
+current_scenario["value_of_current_base"]
 ```
 
-::: mycss
-![](markdown.jpg)
-:::
+### 2. Value of Germany Future Customers Current Conditions
+
+```{r}
+#| echo: false
+#| eval: true
+current_scenario["npv_of_future_customers"]
+```
+
+### 3. Germany Cashflows Current Conditions
+
+```{r}
+#| echo: false
+#| eval: true
+
+current_scenario["cashflows"]
+```
+
+### 4. Total Value of Germany Customers Current Conditions
+
+```{r}
+#| echo: false
+current_scenario["total_value_of_customers"]
+```
+
+### 5. Value of Germany Current Customers Profit Scenario 1 Conditions
+
+```{r}
+#| echo: false
+#| eval: true
+profit_scenario_1["value_of_current_base"]
+```
+
+### 6. Value of Germany Future Customers Profit Scenario 1 Conditions
+
+```{r}
+#| echo: false
+#| eval: true
+profit_scenario_1["npv_of_future_customers"]
+```
+
+### 7. Germany Cashflows Profit Scenario 1 Conditions
+
+```{r}
+#| echo: false
+#| eval: true
+
+profit_scenario_1["cashflows"]
+```
+
+### 8. Total Value of Germany Customers Profit Scenario 1 Conditions
+
+```{r}
+#| echo: false
+profit_scenario_1["total_value_of_customers"]
+```

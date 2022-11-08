@@ -76,60 +76,69 @@ createProfitScenerio <- function(existing_clv, new_clv, discount_rate, current_c
   return(data)
 }
 
-
-#### global ####
-
-case_rev <- 6296000000
-case_cust <- 6558000
-case_lost <- 771000
-case_new <- 574000
-case_churn <- .114
-case_pm <- .3
-case_dr <- .1
-
-case_new_customers_per_year <- 600000
-
-#### scenarios ####
-current <- createScenerio(revenue = case_rev, customers=case_cust,
-                          lost=case_lost, new=case_new, churn_rate=case_churn,
-                          profit_margin=case_pm, discount_rate=case_dr)
-
-# increase in churn by .02
-scenerio_1 <- createScenerio(revenue = case_rev, customers=case_cust,
-                             lost=case_lost, new=case_new, churn_rate=case_churn + .02,
-                             profit_margin=case_pm, discount_rate=case_dr)
-scenerio_1
-
-# decrease in churn by .02
-scenerio_2 <- createScenerio(revenue = case_rev, customers=case_cust,
-                             lost=case_lost, new=case_new, churn_rate=case_churn - .02,
-                             profit_margin=case_pm, discount_rate=case_dr)
-scenerio_2
-
-#### profit scenarios ####
-
-# note: numbers in excel were heavily rounded
-
-# profit scenario current
-# profit_scene_1 <- createProfitScenerio(1345, 1345, case_dr, 6558, 600)
-current_scenario <- createProfitScenerio(current["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
-
-# profit scenario 1
-# profit_scenario_1 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year)
-profit_scenario_1 <- createProfitScenerio(1345, 1345, case_dr, 6558, 600)
-profit_scenario_1
-
-# profit scenario 2
-# profit_scenario_2 <- createProfitScenerio(scenerio_1["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
-profit_scenario_2 <- createProfitScenerio(1230, 1345, case_dr, 6558, 700)
-profit_scenario_2
+createCountryScenerio <- function(revenue, customers, lost, new, churn_rate, profit_margin, discount_rate, country){
+  current <- createScenerio(revenue, customers,lost, new, churn_rate, profit_margin, discount_rate)
+  
+  # increase in churn by .02
+  scenerio_1 <- createScenerio(revenue, customers,lost, new, churn_rate + .02, profit_margin, discount_rate)
+  
+  # decrease in churn by .02
+  scenerio_2 <- createScenerio(revenue, customers, lost, new, churn_rate - .02, profit_margin, discount_rate)
+  
+  # profit scenario current
+  current_scenario <- createProfitScenerio(current["clv"], current["clv"], discount_rate, current['customers'], new)
+  
+  # profit scenario 1
+  profit_scenario_1 <- createProfitScenerio(scenerio_1["clv"], current["clv"], discount_rate, current['customers'], new)
+  
+  # profit scenario 2
+  profit_scenario_2 <- createProfitScenerio(scenerio_1["clv"], current["clv"], discount_rate, current['customers'], new + 100000)
+  
+  # profit scenario 3
+  profit_scenario_3 <- createProfitScenerio(scenerio_1["clv"], scenerio_2["clv"], discount_rate, current['customers'], new + 100000)
+  
+  colname = glue(country, "_percent_relative_change")
+  df <- tibble("{country}" := c(as.numeric(current_scenario["total_value_of_customers"]), as.numeric(profit_scenario_1["total_value_of_customers"]), as.numeric(profit_scenario_2["total_value_of_customers"]), as.numeric(profit_scenario_3["total_value_of_customers"])))
+  # all_scenarios <- all_scenarios %>% mutate("{colname}" := germany/as.numeric(current_scenario["total_value_of_customers"]) -1)
+  return(df)
+}
 
 
-# profit scenario 3
-# profit_scenario_3 <- createProfitScenerio(scenerio_2["clv"], current["clv"], case_dr, current['customers'], case_new_customers_per_year + 100000)
-profit_scenario_3 <- createProfitScenerio(1230, 1484, case_dr, 6558, 700)
-profit_scenario_3
+germany <- createCountryScenerio(revenue = 6296000000, customers=6558000,
+                                 lost=771000, new=574000, churn_rate=.114,
+                                 profit_margin=.3, discount_rate=.1, "germany")
 
+curr <- germany$germany[1]
+germany <- germany %>% mutate("germany_relative_change" = (germany/curr-1)*100)
+germany
+
+
+france <- createCountryScenerio(revenue = 11050000000, customers=8839000,
+                                 lost=922000, new=2047000, churn_rate=.119,
+                                 profit_margin=.3, discount_rate=.1, "france")
+curr <- france$france[1]
+france <- france %>% mutate("france_relative_change" = (france/curr-1)*100)
+france
+
+
+spain <- createCountryScenerio(revenue = 5942000000, customers=8909000,
+                                 lost=642000, new=1573000, churn_rate=.081,
+                                 profit_margin=.3, discount_rate=.1, "spain")
+curr <- spain$spain[1]
+spain <- spain %>% mutate("spain_relative_change" = (spain/curr-1)*100)
+spain
+
+italy <- createCountryScenerio(revenue = 11280000000, customers=12362000,
+                                 lost=1186000, new=1790000, churn_rate=.101,
+                                 profit_margin=.3, discount_rate=.1, "italy")
+curr <- italy$italy[1]
+italy <- italy %>% mutate("italy_relative_change" = (italy/curr -1)*100)
+italy
+
+all_countries <- tibble(scenarios=c("current", "profit scenario 1", "profit scenario 2", "profit scenario 3"),germany,france,italy,spain)
+
+all_countries_percentages <- all_countries %>% select("scenarios","germany_relative_change","france_relative_change","italy_relative_change","spain_relative_change")
+all_countries_percentages
 
 # references
 # https://www.codingprof.com/how-to-calculate-the-net-present-value-npv-in-r-examples/
