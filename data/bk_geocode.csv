@@ -1,0 +1,112 @@
+﻿objectid,ff,co,numstreet,city,state,metro,zipcode,Latitude,Longitude,"Accuracy Score","Accuracy Type",Number,Street,"Unit Type","Unit Number",City,State,County,Zip,Country,Source
+1,"Fast Food","Burger King","1006 Beards Hill Rd",Aberdeen,MD,Harford,21001,39.521818,-76.184289,1,rooftop,1006,"Beards Hill Rd",,,Aberdeen,MD,"Harford County",21001,US,Harford
+17,"Fast Food","Burger King","15785 Livingston Rd",Accokeek,MD,"Prince George's",20607,38.67002,-77.008262,1,rooftop,15785,"Livingston Rd",,,Accokeek,MD,"Prince George's County",20607,US,"Prince Georges"
+26,"Fast Food","Burger King","1952 West St",Annapolis,MD,"Anne Arundel",21401,38.981327,-76.527442,1,rooftop,1952,"West St",,,Annapolis,MD,"Anne Arundel County",21401,US,"Anne Arundel"
+77,"Fast Food","Burger King","6605 Reisterstown Rd",Baltimore,MD,"Baltimore City",21215,39.357561,-76.703124,1,rooftop,6605,"Reisterstown Rd",,,Baltimore,MD,"Baltimore City",21215,US,"City of Baltimore"
+78,"Fast Food","Burger King","4400 Reisterstown Rd",Baltimore,MD,"Baltimore City",21215,39.339061,-76.668494,1,rooftop,4400,"Reisterstown Rd",,,Baltimore,MD,"Baltimore City",21215,US,"City of Baltimore"
+79,"Fast Food","Burger King","2301 Liberty Heights Ave",Baltimore,MD,"Baltimore City",21215,39.318286,-76.652516,1,range_interpolation,2301,"Liberty Heights Ave",,,Baltimore,MD,"Baltimore City",21215,US,"TIGER/Line® dataset from the US Census Bureau"
+80,"Fast Food","Burger King","1437 W Patapsco Ave",Baltimore,MD,"Baltimore City",21230,39.248141,-76.639346,1,rooftop,1437,"W Patapsco Ave",,,Baltimore,MD,"Baltimore City",21230,US,"Statewide MD"
+81,"Fast Food","Burger King","1201 W North Ave",Baltimore,MD,"Baltimore City",21217,39.310009,-76.637299,1,rooftop,1201,"W North Ave",,,Baltimore,MD,"Baltimore City",21217,US,"City of Baltimore"
+82,"Fast Food","Burger King","2001 East Monument St",Baltimore,MD,"Baltimore City",21205,39.298348,-76.589421,1,rooftop,2001,"E Monument St",,,Baltimore,MD,"Baltimore City",21205,US,"City of Baltimore"
+83,"Fast Food","Burger King","555 W 29Th St",Baltimore,MD,"Baltimore City",21211,39.320508,-76.625802,1,rooftop,555,"W 29th St",,,Baltimore,MD,"Baltimore City",21211,US,"City of Baltimore"
+84,"Fast Food","Burger King","100 S Charles St",Baltimore,MD,"Baltimore City",21201,39.287184,-76.615606,1,rooftop,100,"S Charles St",,,Baltimore,MD,"Baltimore City",21201,US,"City of Baltimore"
+85,"Fast Food","Burger King","8 E Fayette St",Baltimore,MD,"Baltimore City",21202,39.290587,-76.614674,1,rooftop,8,"E Fayette St",,,Baltimore,MD,"Baltimore City",21202,US,"City of Baltimore"
+86,"Fast Food","Burger King","1241 Orleans St, Baltimore Md",Baltimore,MD,"Baltimore City",21202,39.294632,-76.600222,1,rooftop,1241,"Orleans St",,,Baltimore,MD,"Baltimore City",21202,US,"City of Baltimore"
+87,"Fast Food","Burger King","2033 Eastern Ave, Baltimore Md",Baltimore,MD,"Baltimore City",21231,39.285469,-76.587469,1,rooftop,2033,"Eastern Ave",,,Baltimore,MD,"Baltimore City",21231,US,"City of Baltimore"
+88,"Fast Food","Burger King","4100 Pulaski Hwy",Baltimore,MD,"Baltimore City",21224,39.297596,-76.562642,1,rooftop,4100,"Pulaski Hwy",,,Baltimore,MD,"Baltimore City",21224,US,"City of Baltimore"
+89,"Fast Food","Burger King","6807 Rolling Mill Rd",Baltimore,MD,Baltimore,21224,39.297217,-76.528827,1,rooftop,6807,"Rolling Mill Rd",,,Baltimore,MD,"Baltimore County",21224,US,Baltimore
+90,"Fast Food","Burger King","1735 Washington Blvd",Baltimore,MD,"Baltimore City",21230,39.275578,-76.641275,1,rooftop,1735,"Washington Blvd",,,Baltimore,MD,"Baltimore City",21230,US,"City of Baltimore"
+272,"Fast Food","Burger King","310 Baltimore Pike","Bel Air",MD,Harford,21014,39.531175,-76.35006,1,range_interpolation,310,"Baltimore Pike",,,"Bel Air",MD,"Harford County",21014,US,"TIGER/Line® dataset from the US Census Bureau"
+273,"Fast Food","Burger King","2110 Emmorton Rd, Bel Air Md","Bel Air",MD,Harford,21015,39.49867,-76.325384,1,range_interpolation,2110,"Emmorton Rd",,,"Bel Air",MD,"Harford County",21015,US,"TIGER/Line® dataset from the US Census Bureau"
+274,"Fast Food","Burger King","200 S Fountain Green Rd, Bel Air Md","Bel Air",MD,Harford,21015,39.546495,-76.313237,1,rooftop,200,"S Fountain Green Rd",,,"Bel Air",MD,"Harford County",21015,US,Harford
+296,"Fast Food","Burger King","10625 Baltimore Ave, Beltsville Md",Beltsville,MD,"Prince George's",20705,39.029794,-76.914097,1,rooftop,10625,"Baltimore Ave",,,Beltsville,MD,"Prince George's County",20705,US,"Prince Georges"
+371,"Fast Food","Burger King","3165 Marshall Hall Road","Bryans Road",MD,Charles,20616,38.627529,-77.073459,1,rooftop,3165,"Marshall Hall Rd",,,"Bryans Road",MD,"Charles County",20616,US,"Statewide MD"
+376,"Fast Food","Burger King","15703 Columbia Pike",Burtonsville,MD,Montgomery,20866,39.11272,-76.932578,1,range_interpolation,15703,"Columbia Pike",,,Burtonsville,MD,"Montgomery County",20866,US,"TIGER/Line® dataset from the US Census Bureau"
+381,"Fast Food","Burger King","45095 Worth Avenue",California,MD,"St. Mary's",20619,38.299352,-76.515224,1,rooftop,45095,"Worth Ave",,,California,MD,"St. Mary's County",20619,US,"St Marys"
+396,"Fast Food","Burger King","2713 Ocean Gateway",Cambridge,MD,Dorchester,21613,38.556464,-76.058503,1,rooftop,2713,"Ocean Gtwy",,,Cambridge,MD,"Dorchester County",21613,US,"Statewide MD"
+427,"Fast Food","Burger King","1935 East Joppa Road",Carney,MD,Baltimore,21234,39.399366,-76.547137,1,rooftop,1935,"E Joppa Rd",,,Parkville,MD,"Baltimore County",21234,US,Baltimore
+448,"Fast Food","Burger King","30026 Three Notch Road","Charlotte Hall",MD,Charles,20622,38.492818,-76.774398,1,rooftop,30026,"3 Notch Rd",,,"Charlotte Hall",MD,"St. Mary's County",20622,US,"St Marys"
+492,"Fast Food","Burger King","150 Cranbrook Road",Cockeysville,MD,Baltimore,21030,39.464646,-76.634598,1,rooftop,150,"Cranbrook Rd",,,Cockeysville,MD,"Baltimore County",21030,US,Baltimore
+504,"Fast Food","Burger King","8510 Baltimore Boulevard","College Park",MD,"Prince George's",20740,38.995057,-76.932683,1,rooftop,8510,"Baltimore Ave",,,"College Park",MD,"Prince George's County",20740,US,"Statewide MD"
+514,"Fast Food","Burger King","3933 Bladensburg Road","Colmar Manor",MD,"Prince George's",20722,38.935536,-76.948315,1,rooftop,3933,"Bladensburg Rd",,,Brentwood,MD,"Prince George's County",20722,US,"Prince Georges"
+548,"Fast Food","Burger King","2217 F. Defense Highway",Crofton,MD,"Anne Arundel",21114,38.991473,-76.701265,1,rooftop,"2217 F","Defense Hwy",,,Crofton,MD,"Anne Arundel County",21114,US,"Anne Arundel"
+556,"Fast Food","Burger King","1290 Industrial Boulevard",Cumberland,MD,Allegany,21502,39.630146,-78.745868,1,rooftop,1290,"Industrial Blvd",,,Cumberland,MD,"Allegany County",21502,US,Allegany
+572,"Fast Food","Burger King","9936 Main Street",Damascus,MD,Montgomery,20872,39.288143,-77.205751,1,rooftop,9936,"Main St",,,Damascus,MD,"Montgomery County",20872,US,Montgomery
+579,"Fast Food","Burger King","604 North Sixth Street",Denton,MD,Caroline,21629,38.859523,-75.835702,0.5,place,,,,,Denton,MD,"Caroline County",21629,US,"TIGER/Line® dataset from the US Census Bureau"
+605,"Fast Food","Burger King","100 West Pulaski Highway",Elkton,MD,Cecil,21921,39.599703,-75.828051,1,rooftop,100,"W Pulaski Hwy",,,Elkton,MD,"Cecil County",21921,US,Cecil
+608,"Fast Food","Burger King","2208 University Boulevard","East Adelphi",MD,"Prince George's",20783,38.983974,-76.975193,1,rooftop,2208,"University Blvd E",,,Hyattsville,MD,"Prince George's County",20783,US,"Statewide MD"
+611,"Fast Food","Burger King","8192 Ocean Gateway",Easton,MD,Talbot,21601,38.773988,-76.06092,1,rooftop,8192,"Ocean Gtwy",,,Easton,MD,"Talbot County",21601,US,"Statewide MD"
+625,"Fast Food","Burger King","3111 Solomons Island Road",Edgewater,MD,"Anne Arundel",21037,38.938778,-76.564568,1,rooftop,3111,"Solomons Island Rd",,,Edgewater,MD,"Anne Arundel County",21037,US,"Anne Arundel"
+678,"Fast Food","Burger King","9195 Baltimore National Pike","Ellicott City",MD,Howard,21042,39.276658,-76.829231,1,rooftop,9195,"Baltimore National Pike",,,"Ellicott City",MD,"Howard County",21042,US,Howard
+701,"Fast Food","Burger King","305 Mountain Road",Fallston,MD,Harford,21047,39.491793,-76.393327,1,rooftop,305,"Mountain Rd",,,Fallston,MD,"Harford County",21047,US,Harford
+714,"Fast Food","Burger King","5730 Silver Hill Road",Forestville,MD,"Prince George's",20747,38.854253,-76.909032,1,rooftop,5730,"Silver Hill Rd",,,"District Heights",MD,"Prince George's County",20747,US,"Prince Georges"
+720,"Fast Food","Burger King","1405 Porter St.","Fort Detrick",MD,Frederick,21702,39.436541,-77.425273,1,rooftop,1405,"Porter St",,,Frederick,MD,"Frederick County",21702,US,Frederick
+722,"Fast Food","Burger King","2794 Rose Street","Fort Meade",MD,"Anne Arundel",20755,39.106122,-76.734121,1,rooftop,2794,"Rose St",,,"Fort George G. Meade",MD,"Anne Arundel County",20755,US,"Anne Arundel"
+742,"Fast Food","Burger King","101 Routzhan's Way",Frederick,MD,Frederick,21701,39.43186,-77.40854,1,rooftop,101,"Frederick Ave",,,Frederick,MD,"Frederick County",21701,US,Frederick
+743,"Fast Food","Burger King","5722 Buckeystown Pike",Frederick,MD,Frederick,21704,39.393037,-77.409889,1,rooftop,5722,"Buckeystown Pike",,,Frederick,MD,"Frederick County",21704,US,Frederick
+744,"Fast Food","Burger King","1302 East Pratick Street",Frederick,MD,Frederick,21701,39.508514,-77.398265,0.6,street_center,,"Old Frederick Rd",,,Frederick,MD,"Frederick County",21701,US,"TIGER/Line® dataset from the US Census Bureau"
+745,"Fast Food","Burger King","1003 West Patrick Street",Frederick,MD,Frederick,21702,39.418569,-77.442603,1,rooftop,1003,"W Patrick St",,,Frederick,MD,"Frederick County",21702,US,Frederick
+746,"Fast Food","Burger King","1448 West Patrick Street",Frederick,MD,Frederick,21702,39.420615,-77.465047,1,rooftop,1448,"W Patrick St",,,Frederick,MD,"Frederick County",21702,US,Frederick
+798,"Fast Food","Burger King","6 Hampton Inn Drive",Frostburg,MD,Allegany,21532,39.640497,-78.909811,1,rooftop,6,"Hampton Inn Dr",,,Frostburg,MD,"Allegany County",21532,US,"Statewide MD"
+808,"Fast Food","Burger King","16004 Shady Grove Road",Gaithersburg,MD,Montgomery,20877,39.119912,-77.182105,1,rooftop,16004,"Shady Grove Rd",,,Gaithersburg,MD,"Montgomery County",20877,US,"City of Rockville"
+849,"Fast Food","Burger King","2619 Brandermill Blvd",Gambrills,MD,"Anne Arundel",21054,39.037928,-76.678349,1,rooftop,2619,"Brandermill Blvd",,,Gambrills,MD,"Anne Arundel County",21054,US,"Anne Arundel"
+863,"Fast Food","Burger King","20430 Germantown Road",Germantown,MD,Montgomery,20874,39.192158,-77.244854,1,rooftop,20430,"Germantown Rd",,,Germantown,MD,"Montgomery County",20876,US,Montgomery
+864,"Fast Food","Burger King","19700 Germantown Road",Germantown,MD,Montgomery,20874,39.179609,-77.26732,1,rooftop,19700,"Germantown Rd",,,Germantown,MD,"Montgomery County",20874,US,Montgomery
+892,"Fast Food","Burger King","7314 Ritchie Highway","Glen Burnie",MD,"Anne Arundel",21061,39.170956,-76.62091,1,rooftop,7314,"Ritchie Hwy",,,"Glen Burnie",MD,"Anne Arundel County",21061,US,"Anne Arundel"
+893,"Fast Food","Burger King","7988 Crain Highway","Glen Burnie",MD,"Anne Arundel",21061,39.131511,-76.639187,1,rooftop,7988,"Crain Hwy S",,,"Glen Burnie",MD,"Anne Arundel County",21061,US,"Anne Arundel"
+894,"Fast Food","Burger King","14 Mountain Road","Glen Burnie",MD,"Anne Arundel",21060,39.13634,-76.597215,1,rooftop,14,"Mountain Rd",,,"Glen Burnie",MD,"Anne Arundel County",21060,US,"Anne Arundel"
+928,"Fast Food","Burger King","2811 Chestnut Ridge Road",Grantsville,MD,Garrett,21536,39.691061,-79.104036,1,rooftop,2811,"Chestnut Ridge Rd",,,Grantsville,MD,"Garrett County",21536,US,Garrett
+947,"Fast Food","Burger King","503 Dual Highway",Hagerstown,MD,Washington,21740,39.637093,-77.709813,1,rooftop,503,"Dual Hwy",,,Hagerstown,MD,"Washington County",21740,US,"Statewide MD"
+948,"Fast Food","Burger King","13014 Pennsylvania Avenue",Hagerstown,MD,Washington,21742,39.670629,-77.72007,1,rooftop,13014,"Pennsylvania Ave",,,Hagerstown,MD,"Washington County",21742,US,"Statewide MD"
+949,"Fast Food","Burger King","10516 Sharpsburg Pike",Hagerstown,MD,Washington,21740,39.602564,-77.729481,1,range_interpolation,10516,"Sharpsburg Pike",,,Hagerstown,MD,"Washington County",21740,US,"TIGER/Line® dataset from the US Census Bureau"
+950,"Fast Food","Burger King","17532 Valley Mall Road",Hagerstown,MD,Washington,21740,39.622662,-77.767664,1,rooftop,17532,"Valley Mall Rd",,,Hagerstown,MD,"Washington County",21740,US,"Statewide MD"
+951,"Fast Food","Burger King","18234 Maugans Avenue",Hagerstown,MD,Washington,21740,39.691685,-77.738729,1,range_interpolation,18234,"Maugans Ave",,,Hagerstown,MD,"Washington County",21740,US,"TIGER/Line® dataset from the US Census Bureau"
+1000,"Fast Food","Burger King","2211 Brodbeck Road",Hampstead,MD,Carroll,21074,39.63704,-76.867076,1,rooftop,2211,"Brodbeck Rd",,,Hampstead,MD,"Carroll County",21074,US,Carroll
+1012,"Fast Food","Burger King","7426 New Ridge Rd",Hanover,MD,"Anne Arundel",21076,39.176843,-76.703317,1,rooftop,7426,"New Ridge Rd",,,Hanover,MD,"Anne Arundel County",21076,US,"Anne Arundel"
+1013,"Fast Food","Burger King","7500 Connolly Drive",Hanover,MD,"Anne Arundel",21076,39.160285,-76.681238,1,rooftop,7500,"Connelley Dr",,,Hanover,MD,"Anne Arundel County",21076,US,"Statewide MD"
+1029,"Fast Food","Burger King","990 Pulaski Highway","Havre de Grace",MD,Harford,21078,39.546362,-76.105512,1,rooftop,990,"W Pulaski Hwy",,,"Havre De Grace",MD,"Harford County",21078,US,Harford
+1033,"Fast Food","Burger King","2122 Fountain Green Road",Hickory,MD,Harford,21015,39.576939,-76.344979,0.9,rooftop,2122,"N Fountain Green Rd",,,"Bel Air",MD,"Harford County",21015,US,Harford
+1039,"Fast Food","Burger King","11300 York Road","Hunt Valley",MD,Baltimore,21030,39.493678,-76.650045,1,rooftop,11300,"York Rd",,,Cockeysville,MD,"Baltimore County",21030,US,Baltimore
+1069,"Fast Food","Burger King","8775 Baltimore Washington Boulevard",Jessup,MD,Howard,20794,39.142334,-76.754631,0.6,street_center,,"Baltimore-Washington Pkwy",,,Jessup,MD,"Anne Arundel County",20794,US,"TIGER/Line® dataset from the US Census Bureau"
+1081,"Fast Food","Burger King","6720 Crain Highway","La Plata",MD,Charles,20646,38.527936,-76.981929,1,rooftop,6720,"Crain Hwy",,,"LA Plata",MD,"Charles County",20646,US,"Statewide MD"
+1098,"Fast Food","Burger King","6505 Annapolis Road",Landover,MD,"Prince George's",20784,38.938949,-76.906534,1,rooftop,6505,"Annapolis Rd",,,Hyattsville,MD,"Prince George's County",20784,US,"Prince Georges"
+1124,"Fast Food","Burger King","8903 Annapolis Road",Lanham-Seabrook,MD,"Prince George's",20706,38.960362,-76.863495,1,rooftop,8903,"Annapolis Rd",,,Lanham,MD,"Prince George's County",20706,US,"Prince Georges"
+1136,"Fast Food","Burger King","14801 Baltimore Avenue",Laurel,MD,"Prince George's",20707,39.092906,-76.854881,1,rooftop,14801,"Baltimore Ave",,,Laurel,MD,"Prince George's County",20707,US,"Prince Georges"
+1137,"Fast Food","Burger King","3359 Corridor Market Place",Laurel,MD,"Anne Arundel",20724,39.097464,-76.806751,1,rooftop,3359,"Corridor Marketplace",,,Laurel,MD,"Anne Arundel County",20724,US,"Anne Arundel"
+1161,"Fast Food","Burger King","1299 National Highway","La Vale",MD,Allegany,21502,39.637913,-78.844812,1,rooftop,1299,"National Hwy",,,Cumberland,MD,"Allegany County",21502,US,Allegany
+1172,"Fast Food","Burger King","21650 Great Mills Rd","Lexington Park",MD,"St. Mary's",20653,38.261876,-76.461413,1,rooftop,21650,"Great Mills Rd",,,"Lexington Park",MD,"St. Mary's County",20653,US,"St Marys"
+1200,"Fast Food","Burger King","24179 Garrett Highway",McHenry,MD,Garrett,21541,39.556373,-79.351855,1,rooftop,24179,"Garrett Hwy",,,"Mc Henry",MD,"Garrett County",21541,US,Garrett
+1211,"Fast Food","Burger King","8022 Liberty Road","Milford Mill",MD,Baltimore,21244,39.353347,-76.755695,1,rooftop,8022,"Liberty Rd",,,"Windsor Mill",MD,"Baltimore County",21244,US,Baltimore
+1230,"Fast Food","Burger King","501 East Ridgeville Boulevard","Mount Airy",MD,Carroll,21771,39.363494,-77.1592,1,rooftop,501,"E Ridgeville Blvd",,,"Mount Airy",MD,"Carroll County",21771,US,Carroll
+1236,"Fast Food","Burger King","9620 Myersville Road",Myersville,MD,Frederick,21773,39.494481,-77.568413,1,range_interpolation,9620,"Myersville Rd",,,Myersville,MD,"Frederick County",21773,US,"TIGER/Line® dataset from the US Census Bureau"
+1246,"Fast Food","Burger King","71 North East Road","North East",MD,Cecil,21901,39.52954,-75.956562,0.9,range_interpolation,71,"Red Point Rd",,,"North East",MD,"Cecil County",21901,US,"TIGER/Line® dataset from the US Census Bureau"
+1253,"Fast Food","Burger King","4101 Wholesale Club Drive",Nottingham,MD,Baltimore,21236,39.379159,-76.502484,1,rooftop,4101,"Wholesale Club Dr",,,Nottingham,MD,"Baltimore County",21236,US,Baltimore
+1263,"Fast Food","Burger King","841 East Oak Street",Oakland,MD,Garrett,21550,39.403271,-79.399133,1,rooftop,841,"E Oak St",,,Oakland,MD,"Garrett County",21550,US,Garrett
+1273,"Fast Food","Burger King","3205 Philadelphia Avenue","Ocean City",MD,Worcester,21842,38.361447,-75.073601,1,rooftop,3205,"Philadelphia Ave",,,"Ocean City",MD,"Worcester County",21842,US,"Statewide MD"
+1274,"Fast Food","Burger King","119Th Street & Coastal Highway","Ocean City",MD,Worcester,21842,38.424258,-75.054977,0.71,intersection,,"119th St",,,"Ocean City",MD,"Worcester County",21842,US,"TIGER/Line® dataset from the US Census Bureau"
+1335,"Fast Food","Burger King","6150 Oxon Hill Road","Oxon Hill",MD,"Prince George's",20745,38.80423,-76.97852,1,rooftop,6150,"Oxon Hill Rd",,,"Oxon Hill",MD,"Prince George's County",20745,US,"Prince Georges"
+1336,"Fast Food","Burger King","5141 Indian Head Highway","Oxon Hill",MD,"Prince George's",20745,38.819566,-77.001056,1,rooftop,5141,"Indian Head Hwy",,,"Oxon Hill",MD,"Prince George's County",20745,US,"Prince Georges"
+1353,"Fast Food","Burger King","8311 Harford Road",Parkville,MD,Baltimore,21234,39.379731,-76.53721,1,rooftop,8311,"Harford Rd",,,Parkville,MD,"Baltimore County",21234,US,Baltimore
+1451,"Fast Food","Burger King","11907 Reisterstown Road",Reistertown,MD,Baltimore,21136,39.448267,-76.815191,1,rooftop,11907,"Reisterstown Rd",,,Reisterstown,MD,"Baltimore County",21136,US,Baltimore
+1457,"Fast Food","Burger King","1325 Policy Dr",Riverside,MD,Harford,21017,39.47827,-76.248928,1,rooftop,1325,"Policy Dr",,,Belcamp,MD,"Harford County",21017,US,Harford
+1460,"Fast Food","Burger King","10042 Darnstown Road",Rockville,MD,Montgomery,20874,39.096519,-77.206557,0.96,rooftop,10042,"Darnestown Rd",,,Rockville,MD,"Montgomery County",20850,US,"City of Rockville"
+1506,"Fast Food","Burger King","1025 S. Salisbury Blvd.",Salisbury,MD,Wicomico,21801,38.349747,-75.601311,0.89,nearest_rooftop_match,1015,"S Salisbury Blvd",,,Salisbury,MD,"Wicomico County",21801,US,"Statewide MD"
+1507,"Fast Food","Burger King","1201 Mt. Hermon Road",Salisbury,MD,Wicomico,21804,38.368423,-75.572818,1,rooftop,1201,"Mt Hermon Rd",,,Salisbury,MD,"Wicomico County",21804,US,"Statewide MD"
+1508,"Fast Food","Burger King","101 Naylor Mill Road",Salisbury,MD,Wicomico,21801,38.41038,-75.568105,1,rooftop,101,"Naylor Mill Rd",,,Salisbury,MD,"Wicomico County",21801,US,"Statewide MD"
+1564,"Fast Food","Burger King","3870 International Drive","Silver Spring",MD,Montgomery,20906,39.102497,-77.076228,1,rooftop,3870,"International Dr",,,"Silver Spring",MD,"Montgomery County",20906,US,Montgomery
+1565,"Fast Food","Burger King","12265 Viers Mill Road","Silver Spring",MD,Montgomery,20906,39.057801,-77.084596,1,rooftop,12265,"Veirs Mill Rd",,,"Silver Spring",MD,"Montgomery County",20906,US,Montgomery
+1600,"Fast Food","Burger King","13410 H.G. Trueman Rd",Solomons,MD,Calvert,20688,38.345261,-76.461514,0.71,nearest_rooftop_match,13500,"Hg Trueman Rd",,,Dowell,MD,"Calvert County",20629,US,"Statewide MD"
+1615,"Fast Food","Burger King","1333 Liberty Road",Sykesville,MD,Carroll,21784,39.40285,-76.947913,1,rooftop,1333,"Liberty Rd",,,Sykesville,MD,"Carroll County",21784,US,Carroll
+1628,"Fast Food","Burger King","3939 Branch Avenue","Temple Hills",MD,"Prince George's",20748,38.833246,-76.942378,1,rooftop,3939,"Branch Ave",,,"Temple Hills",MD,"Prince George's County",20748,US,"Prince Georges"
+1636,"Fast Food","Burger King","427 North Church Street",Thurmont,MD,Frederick,21778,39.633376,-77.411211,0.98,rooftop,427,"N Church St",,,Thurmont,MD,"Frederick County",21788,US,Frederick
+1637,"Fast Food","Burger King","2000 York Road",Thurmont,MD,Baltimore,21093,39.436481,-76.625249,1,rooftop,2000,"York Rd",,,"Lutherville Timonium",MD,"Baltimore County",21093,US,Baltimore
+1647,"Fast Food","Burger King","1043 Taylor Avenue",Towson,MD,Baltimore,21286,39.383789,-76.57469,1,rooftop,1043,"Taylor Ave",,,Towson,MD,"Baltimore County",21286,US,Baltimore
+1648,"Fast Food","Burger King","925 York Road",Towson,MD,Baltimore,21204,39.408806,-76.607776,1,rooftop,925,"York Rd",,,Towson,MD,"Baltimore County",21204,US,Baltimore
+1649,"Fast Food","Burger King","825 Dulaney Valley Rd",Towson,MD,Baltimore,21204,39.403317,-76.599209,1,rooftop,825,"Dulaney Valley Rd",,,Towson,MD,"Baltimore County",21204,US,Baltimore
+1692,"Fast Food","Burger King","1110 Smallwood Drive",Waldorf,MD,Charles,20603,38.611894,-76.925726,1,range_interpolation,1110,"Smallwood Dr",,,Waldorf,MD,"Charles County",20603,US,"TIGER/Line® dataset from the US Census Bureau"
+1693,"Fast Food","Burger King","2375 Crain Highway",Waldorf,MD,Charles,20601,38.64637,-76.890412,1,rooftop,2375,"Crain Hwy",,,Waldorf,MD,"Charles County",20601,US,"Statewide MD"
+1729,"Fast Food","Burger King","454 Wmc Drive",Westminster,MD,Carroll,21158,39.586858,-77.01227,1,rooftop,454,"Wmc Dr",,,Westminster,MD,"Carroll County",21158,US,Carroll
+1730,"Fast Food","Burger King","Crossroads Shopping Center",Westminster,MD,Carroll,21157,39.564201,-76.980701,1,place,,,,,Westminster,MD,"Carroll County",21157,US,"TIGER/Line® dataset from the US Census Bureau"
+1756,"Fast Food","Burger King","8233 Perry Hall Blvd","White Marsh",MD,Baltimore,21236,39.375123,-76.471748,1,rooftop,8233,"Perry Hall Blvd",,,Nottingham,MD,"Baltimore County",21236,US,Baltimore
+1757,"Fast Food","Burger King","9999 Pulaski Highway","White Marsh",MD,Baltimore,21220,39.359485,-76.446241,1,rooftop,9999,"Pulaski Hwy",,,"Middle River",MD,"Baltimore County",21220,US,Baltimore
+1775,"Fast Food","Burger King","1650 Belmont Avenue",Woodlawn,MD,Baltimore,21244,39.314586,-76.749684,1,rooftop,1650,"Belmont Ave",,,"Windsor Mill",MD,"Baltimore County",21244,US,Baltimore
