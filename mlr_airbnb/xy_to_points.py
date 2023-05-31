@@ -12,7 +12,7 @@ import pandas as pd
 
 #%%
 
-def xy_to_points(df, longitude_string, latitude_string):
+def xy_to_points(path, longitude_string, latitude_string):
     """
 
     Parameters
@@ -34,14 +34,13 @@ def xy_to_points(df, longitude_string, latitude_string):
     
 
     """
+    airbnb = pd.read_csv(path)
     points = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df[longitude_string], df[latitude_string]))
     points = points.set_crs('epsg:3857')
-    return points
+    points.to_file("points.geojson", driver="GeoJSON")
 
 #%%
 
-airbnb = pd.read_csv("../data/airbnb.csv")
 
-airbnb_points = xy_to_points(airbnb, "longitude", "latitude")
 
-airbnb_points.to_file("airbnb_points.geojson", driver="GeoJSON")
+xy_to_points("../data/wendys_geocode.csv", "Longitude", "Latitude")
